@@ -19,32 +19,32 @@
     "policies": [],
     "queues": [
         {
-			"name": "matchmaking.games.search",
-			"vhost": "vhost",
-			"durable": true,
-			"auto_delete": false,
-			"arguments": {}
+            "name": "matchmaking.games.search",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
         },
         {
-			"name": "matchmaking.games.requeue",
-			"vhost": "vhost",
-			"durable": true,
-			"auto_delete": false,
-			"arguments": {}
-        },
-		{
-			"name": "matchmaking.queues.generic",
-			"vhost": "vhost",
-			"durable": true,
-			"auto_delete": false,
-			"arguments": {}
+            "name": "matchmaking.games.requeue",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
         },
         {
-			"name": "matchmaking.queues.lobbies",
-			"vhost": "vhost",
-			"durable": true,
-			"auto_delete": false,
-			"arguments": {}
+            "name": "matchmaking.queues.generic",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "matchmaking.queues.lobbies",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
         }
     ],
     "exchanges": [
@@ -121,65 +121,65 @@
             "arguments": {}
         },
         {
-			"name": "open-matchmaking.matchmaking.generic-queue.fanout",
-			"vhost": "vhost",
-			"type": "fanout",
-			"durable": true,
-			"auto_delete": false,
-			"internal": false,
-			"arguments": {}
+            "name": "open-matchmaking.matchmaking.generic-queue.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
         },
         {
-			"name": "open-matchmaking.matchmaking.requeue.direct",
-			"vhost": "vhost",
-			"type": "direct",
-			"durable": true,
-			"auto_delete": false,
-			"internal": false,
-			"arguments": {}
+            "name": "open-matchmaking.matchmaking.requeue.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
         },
         {
-			"name": "open-matchmaking.matchmaking.lobby.fanout",
-			"vhost": "vhost",
-			"type": "fanout",
-			"durable": true,
-			"auto_delete": false,
-			"internal": false,
-			"arguments": {}
+            "name": "open-matchmaking.matchmaking.lobby.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
         }
     ],
     "bindings": [
         {
-			"source": "open-matchmaking.direct",
-			"vhost": "vhost",
-			"destination": "matchmaking.games.search",
-			"destination_type": "queue",
-			"routing_key": "matchmaking.games.search",
-			"arguments": {}
+            "source": "open-matchmaking.direct",
+            "vhost": "vhost",
+            "destination": "matchmaking.games.search",
+            "destination_type": "queue",
+            "routing_key": "matchmaking.games.search",
+            "arguments": {}
         },
         {
-			"source": "open-matchmaking.matchmaking.generic-queue.fanout",
-			"vhost": "vhost",
-			"destination": "matchmaking.queues.generic",
-			"destination_type": "queue",
-			"routing_key": "matchmaking.queues.generic",
-			"arguments": {}
+            "source": "open-matchmaking.matchmaking.generic-queue.fanout",
+            "vhost": "vhost",
+            "destination": "matchmaking.queues.generic",
+            "destination_type": "queue",
+            "routing_key": "matchmaking.queues.generic",
+            "arguments": {}
         },
         {
-			"source": "open-matchmaking.matchmaking.requeue.direct",
-			"vhost": "vhost",
-			"destination": "matchmaking.games.requeue",
-			"destination_type": "queue",
-			"routing_key": "matchmaking.games.requeue",
-			"arguments": {}
+            "source": "open-matchmaking.matchmaking.requeue.direct",
+            "vhost": "vhost",
+            "destination": "matchmaking.games.requeue",
+            "destination_type": "queue",
+            "routing_key": "matchmaking.games.requeue",
+            "arguments": {}
         },
         {
-			"source": "open-matchmaking.matchmaking.lobby.fanout",
-			"vhost": "vhost",
-			"destination": "matchmaking.queues.lobbies",
-			"destination_type": "queue",
-			"routing_key": "matchmaking.queues.lobbies",
-			"arguments": {}
-		}
+            "source": "open-matchmaking.matchmaking.lobby.fanout",
+            "vhost": "vhost",
+            "destination": "matchmaking.queues.lobbies",
+            "destination_type": "queue",
+            "routing_key": "matchmaking.queues.lobbies",
+            "arguments": {}
+        }
     ]
 }
