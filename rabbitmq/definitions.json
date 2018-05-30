@@ -45,6 +45,34 @@
             "durable": true,
             "auto_delete": false,
             "arguments": {}
+        },
+        {
+            "name": "player-stats.statistic.init",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "player-stats.statistic.retrieve",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "player-stats.statistic.update",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "strategist.match.сheck",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
         }
     ],
     "exchanges": [
@@ -146,6 +174,42 @@
             "auto_delete": false,
             "internal": false,
             "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.player-stats.statistic.init.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.player-stats.statistic.retrieve.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.player-stats.statistic.update.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.strategist.check.fanout",
+            "vhost": "vhost",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
         }
     ],
     "bindings": [
@@ -155,6 +219,14 @@
             "destination": "matchmaking.games.search",
             "destination_type": "queue",
             "routing_key": "matchmaking.games.search",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.direct",
+            "vhost": "vhost",
+            "destination": "matchmaking.games.search.cancel",
+            "destination_type": "queue",
+            "routing_key": "matchmaking.games.search.cancel",
             "arguments": {}
         },
         {
@@ -179,6 +251,38 @@
             "destination": "matchmaking.queues.lobbies",
             "destination_type": "queue",
             "routing_key": "matchmaking.queues.lobbies",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.player-stats.statistic.init.fanout",
+            "vhost": "vhost",
+            "destination": "player-stats.statistic.init",
+            "destination_type": "queue",
+            "routing_key": "player-stats.statistic.init",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.player-stats.statistic.retrieve.fanout",
+            "vhost": "vhost",
+            "destination": "player-stats.statistic.retrieve",
+            "destination_type": "queue",
+            "routing_key": "player-stats.statistic.retrieve",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.player-stats.statistic.update.fanout",
+            "vhost": "vhost",
+            "destination": "player-stats.statistic.update",
+            "destination_type": "queue",
+            "routing_key": "player-stats.statistic.update",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.strategist.check.fanout",
+            "vhost": "vhost",
+            "destination": "strategist.match.сheck",
+            "destination_type": "queue",
+            "routing_key": "strategist.match.сheck",
             "arguments": {}
         }
     ]
