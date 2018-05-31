@@ -149,9 +149,9 @@
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.matchmaking.generic-queue.fanout",
+            "name": "open-matchmaking.matchmaking.generic-queue.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
@@ -167,45 +167,45 @@
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.matchmaking.lobby.fanout",
+            "name": "open-matchmaking.matchmaking.lobby.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.player-stats.statistic.init.fanout",
+            "name": "open-matchmaking.player-stats.statistic.init.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.player-stats.statistic.retrieve.fanout",
+            "name": "open-matchmaking.player-stats.statistic.retrieve.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.player-stats.statistic.update.fanout",
+            "name": "open-matchmaking.player-stats.statistic.update.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
             "arguments": {}
         },
         {
-            "name": "open-matchmaking.strategist.check.fanout",
+            "name": "open-matchmaking.strategist.check.direct",
             "vhost": "vhost",
-            "type": "fanout",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
@@ -230,7 +230,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.matchmaking.generic-queue.fanout",
+            "source": "open-matchmaking.matchmaking.generic-queue.direct",
             "vhost": "vhost",
             "destination": "matchmaking.queues.generic",
             "destination_type": "queue",
@@ -246,7 +246,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.matchmaking.lobby.fanout",
+            "source": "open-matchmaking.matchmaking.lobby.direct",
             "vhost": "vhost",
             "destination": "matchmaking.queues.lobbies",
             "destination_type": "queue",
@@ -254,7 +254,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.player-stats.statistic.init.fanout",
+            "source": "open-matchmaking.player-stats.statistic.init.direct",
             "vhost": "vhost",
             "destination": "player-stats.statistic.init",
             "destination_type": "queue",
@@ -262,7 +262,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.player-stats.statistic.retrieve.fanout",
+            "source": "open-matchmaking.player-stats.statistic.retrieve.direct",
             "vhost": "vhost",
             "destination": "player-stats.statistic.retrieve",
             "destination_type": "queue",
@@ -270,7 +270,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.player-stats.statistic.update.fanout",
+            "source": "open-matchmaking.player-stats.statistic.update.direct",
             "vhost": "vhost",
             "destination": "player-stats.statistic.update",
             "destination_type": "queue",
@@ -278,7 +278,7 @@
             "arguments": {}
         },
         {
-            "source": "open-matchmaking.strategist.check.fanout",
+            "source": "open-matchmaking.strategist.check.direct",
             "vhost": "vhost",
             "destination": "strategist.match.сheck",
             "destination_type": "queue",
