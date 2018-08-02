@@ -73,6 +73,27 @@
             "durable": true,
             "auto_delete": false,
             "arguments": {}
+        },
+        {
+            "name": "game-servers-pool.server.register",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "game-servers-pool.server.retrieve",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "game-servers-pool.server.update",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
         }
     ],
     "exchanges": [
@@ -210,6 +231,33 @@
             "auto_delete": false,
             "internal": false,
             "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.game-server-pool.server.register.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.game-server-pool.server.retrieve.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.game-server-pool.server.update.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
         }
     ],
     "bindings": [
@@ -283,6 +331,30 @@
             "destination": "strategist.match.сheck",
             "destination_type": "queue",
             "routing_key": "strategist.match.сheck",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.game-server-pool.server.register.direct",
+            "vhost": "vhost",
+            "destination": "game-servers-pool.server.register",
+            "destination_type": "queue",
+            "routing_key": "game-servers-pool.server.register",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.game-server-pool.server.retrieve.direct",
+            "vhost": "vhost",
+            "destination": "game-servers-pool.server.retrieve",
+            "destination_type": "queue",
+            "routing_key": "game-servers-pool.server.retrieve",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.game-server-pool.server.update.direct",
+            "vhost": "vhost",
+            "destination": "game-servers-pool.server.update",
+            "destination_type": "queue",
+            "routing_key": "game-servers-pool.server.update",
             "arguments": {}
         }
     ]
