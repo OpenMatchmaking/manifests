@@ -19,6 +19,48 @@
     "policies": [],
     "queues": [
         {
+            "name": "auth.microservices.register",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "auth.token.new",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "auth.token.verify",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "auth.token.refresh",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "auth.users.retrieve",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "auth.users.register",
+            "vhost": "vhost",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
             "name": "matchmaking.games.search",
             "vhost": "vhost",
             "durable": true,
@@ -170,6 +212,51 @@
             "arguments": {}
         },
         {
+            "name": "open-matchmaking.auth.token.new.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.auth.token.verify.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.auth.token.refresh.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.auth.users.retrieve.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "open-matchmaking.auth.users.register.direct",
+            "vhost": "vhost",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
             "name": "open-matchmaking.matchmaking.generic-queue.direct",
             "vhost": "vhost",
             "type": "direct",
@@ -261,6 +348,54 @@
         }
     ],
     "bindings": [
+        {
+            "source": "open-matchmaking.direct",
+            "vhost": "vhost",
+            "destination": "auth.microservices.register",
+            "destination_type": "queue",
+            "routing_key": "auth.microservices.register",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.auth.token.new.direct",
+            "vhost": "vhost",
+            "destination": "auth.token.new",
+            "destination_type": "queue",
+            "routing_key": "auth.token.new",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.auth.token.verify.direct",
+            "vhost": "vhost",
+            "destination": "auth.token.verify",
+            "destination_type": "queue",
+            "routing_key": "auth.token.verify",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.auth.token.refresh.direct",
+            "vhost": "vhost",
+            "destination": "auth.token.refresh",
+            "destination_type": "queue",
+            "routing_key": "auth.token.refresh",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.auth.users.retrieve.direct",
+            "vhost": "vhost",
+            "destination": "auth.users.retrieve",
+            "destination_type": "queue",
+            "routing_key": "auth.users.retrieve",
+            "arguments": {}
+        },
+        {
+            "source": "open-matchmaking.auth.users.register.direct",
+            "vhost": "vhost",
+            "destination": "auth.users.register",
+            "destination_type": "queue",
+            "routing_key": "auth.users.register",
+            "arguments": {}
+        },
         {
             "source": "open-matchmaking.direct",
             "vhost": "vhost",
